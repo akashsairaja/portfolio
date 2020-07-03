@@ -1,0 +1,87 @@
+.window-frame {
+  background-color: gainsboro;
+  width: calc(60vw);
+  height: calc(50vh);
+  min-width: 200px !important;
+  min-height: 100px !important;
+  margin-top: 100px;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.window-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 15px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.os-button {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  left: 10px;
+  top: 10px;
+  z-index: 40;
+  float: left;
+  margin-right: 8px;
+}
+
+.button-red {
+  background-color: rgba(250, 50, 0, 0.8);
+  border: 1px solid #fa3200;
+  cursor: pointer;
+}
+
+.button-yellow {
+  background-color: rgba(253, 195, 6, 0.8);
+  border: 1px solid #fdc306;
+  cursor: pointer;
+}
+
+.button-green {
+  background-color: rgba(65, 203, 75, 0.8);
+  border: 1px solid #41cb4b;
+  cursor: pointer;
+}
+
+.window-content {
+  position: relative;
+  background-color: white;
+  top: 30px;
+  width: 100%;
+  height: calc(100% - 30px);
+  overflow-y: scroll;
+}
+.window-content::-webkit-scrollbar {
+  width: 7px;
+  background-color: #E4E4E4;
+}
+.window-content::-webkit-scrollbar-track {
+  background-color: #FF6B6B;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.window-content::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+
+.min-vw-vh-90 {
+  min-width: 90vw !important;
+  min-height: 90vh !important;
+}
+
+.mouse-default {
+  cursor: default;
+}
+
+/*# sourceMappingURL=style.css.map */
