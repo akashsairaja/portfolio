@@ -19,6 +19,10 @@ const folders = [
         icon: 'fa fa-folder fa-2x',
         name: 'Skills',
     },
+    {
+        icon: 'fa fa-folder fa-2x',
+        name: 'Contribution',
+    },
 ];
 
 const initialState = {

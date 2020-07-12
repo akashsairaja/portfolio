@@ -6,6 +6,7 @@ import Academics from '../Academics';
 import Projects from '../Projects';
 import Skills from '../Skills';
 import Profile from '../Profile';
+import Contribution from '../Contribution';
 
 import { closeHandler, windowHandlers, openFolder, windowDarkModeCheck } from '../../utils';
 
@@ -45,6 +46,8 @@ export default class Window extends React.PureComponent {
                 return <Skills/>;
             case 'MyProfile':
                 return <Profile/>;
+            case 'Contribution':
+                return <Contribution/>;
             default:
                 return '';
         }
@@ -53,7 +56,7 @@ export default class Window extends React.PureComponent {
     render() {
         const { title, onWindowMinimizedClicked, onFolderCloseClicked } = this.props;
         return (
-            <div className="window-frame d-block" id={title}>
+            <div className="window-frame d-block" id={title} onDoubleClick={() => windowHandlers()} >
                 <button
                     type="button"
                     className="os-button button-red px-0 mouse-default"
@@ -80,7 +83,6 @@ export default class Window extends React.PureComponent {
                     type="button"
                     ref={this.buttonTitle}
                     className="window-title mouse-default"
-                    onDoubleClick={() => windowHandlers()}
                 />
                 <div className="window-content">
                     <div className="col-md-12">{this.renderComponent()}</div>

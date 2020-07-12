@@ -48,7 +48,7 @@ function DockHandle({ minimized, activeFolderName }) {
                         </a>
                     </li>
 
-                    <li className="list-group-item bg-transparent border-0 dock__handle__icon">
+                    {/*<li className="list-group-item bg-transparent border-0 dock__handle__icon">
                         <a
                             rel="noopener noreferrer"
                             target="_blank"
@@ -56,7 +56,7 @@ function DockHandle({ minimized, activeFolderName }) {
                         >
                             <i className="fa fa-instagram fa-2x" />
                         </a>
-                    </li>
+                    </li>*/}
                 </ul>
             </div>
         </div>
