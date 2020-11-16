@@ -1,7 +1,7 @@
 import images from '../images';
 
 
-function windowHandlers() {
+const windowHandlers = (e = null) => {
 	const minMax = document.querySelectorAll('.window-frame');
 	minMax.forEach((item) => {
 		if (item.classList.contains('min-vw-vh-90')) {
@@ -10,9 +10,13 @@ function windowHandlers() {
 			item.classList.add('min-vw-vh-90');
 		}
 	});
-}
+	if (e) {
+		e.stopPropagation();
+		e.preventDefault();
+	}
+};
 
-function closeHandler() {
+const closeHandler = () => {
 	const minMax = document.querySelectorAll('.window-frame');
 	minMax.forEach((item) => {
 		if (item.classList.contains('d-block')) {
@@ -23,24 +27,24 @@ function closeHandler() {
 			item.classList.add('d-block');
 		}
 	});
-}
+};
 
-function openFolder(e = null) {
+const openFolder = (e = null) => {
 	const folders = document.querySelectorAll('.folder__icon');
 	folders.forEach((folder) => {
 		folder.classList.remove('fa-folder-open');
 		folder.classList.add('fa-folder');
 	});
 	if (e != null) e.currentTarget.classList.add('fa-folder-open');
-}
+};
 
-function openFromList(id) {
+const openFromList = (id) => {
 	const window = document.getElementById(id);
 	window.classList.remove('d-none');
 	window.classList.add('d-block');
-}
+};
 
-function updateDarkMode() {
+const updateDarkMode = () => {
 	const { style } = document.body;
 	const toggle = document.querySelector('.toggle-inner');
 	const icon = document.querySelector('.mode-icon');
@@ -70,9 +74,9 @@ function updateDarkMode() {
 		wallPaper.style = `background-image: url("${images.wallpaperBE}") !important;`;
 	}
 	windowDarkModeCheck();
-}
+};
 
-function windowDarkModeCheck() {
+const windowDarkModeCheck = () => {
 	['Experience', 'Academics', 'Projects', 'Skills', 'MyProfile', 'dockHandle'].forEach((id) => {
 		const element = document.getElementById(id);
 		if (element !== null) {
@@ -94,7 +98,7 @@ function windowDarkModeCheck() {
 			profileImg.src = images.profilePic;
 		}
 	}
-}
+};
 
 
 export { windowHandlers, closeHandler, openFolder, openFromList, updateDarkMode, windowDarkModeCheck };

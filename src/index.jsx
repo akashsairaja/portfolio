@@ -3,21 +3,14 @@ import ReactDOM from 'react-dom';
 
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
-import App from './screens';
 
+import Loader from './components/Loader';
 import './scss/style.scss';
 
+const App = React.lazy(() => import ('./screens'));
+
 const RootApp = () => (
-	<Suspense
-		fallback={
-			<div className="preloader">
-				<div className="centered loader loader-1">
-					<div className="loader-outter"/>
-					<div className="loader-inner"/>
-				</div>
-			</div>
-		}
-	>
+	<Suspense fallback={<Loader/>}>
 		<BrowserRouter>
 			<Switch>
 				<Route path="/" exact component={App}/>
