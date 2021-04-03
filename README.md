@@ -17,12 +17,11 @@ git@github.com:akashsairaja/portfolio.git
 ## Client Settings
 
 ```bash
-cd client
+cd portfolio
 cmd npm install
 ```
 
-#Configuration's
-Custom Configurations
+#Custom Configurations
 ```spacebars
     src/config/index.js
 ```
