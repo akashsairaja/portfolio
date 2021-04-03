@@ -1,58 +1,65 @@
 import React from 'react';
-import Draggable from 'react-draggable';
 
+import DarkModeToggle from '../components/DarkMode';
 import DockHandle from '../components/DockHandle';
 import Window from '../components/Window';
 import Folders from '../components/Folder';
-import DarkModeToggle from '../components/DarkMode';
+import config from '../config';
 
-import images from '../images';
+import { initialState } from './constants';
 
-import { folders, initialState, actionTypes } from './constants';
-import reducer from './reducer';
+const images = config.images;
 
 const Portfolio = () => {
-	const [state, dispatch] = React.useReducer(reducer, initialState);
 
-	React.useEffect(() => {
-		window.localStorage.setItem('darkMode', false);
-	}, []);
+	const [state, updateState] = React.useState(initialState);
 
-	const onFolderClicked = (activeFolderName) => dispatch({
-		type: actionTypes.FOLDER_IS_OPENED,
-		payload: { activeFolderName },
+	const onFolderClicked = (activeFolderName) => updateState({
+		...state,
+		isOpened: true,
+		minimized: false,
+		activeFolderName,
 	});
 
-	const onWindowMinimizedClicked = () => dispatch({ type: actionTypes.FOLDER_MINIMIZED });
+	const onWindowMinimizedClicked = () => updateState({
+		...state,
+		minimized: true,
+		isOpened: false,
+	});
 
-
-	const onFolderCloseClicked = () => dispatch({ type: actionTypes.FOLDER_CLOSED });
+	const onFolderCloseClicked = () => updateState({
+		...state,
+		isOpened: false,
+		minimized: false,
+		activeFolderName: '',
+	});
 
 	const { activeFolderName, isOpened, minimized } = state;
 
+	const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+	const backgroundImage = isDarkMode ? images.wallpaperBE : images.wallpaper;
+
 	return (
-		<div
-			className="container-fluid graph overflow-hidden"
-			id="wallpaper"
-			style={{ backgroundImage: `url(${images.wallpaper})` }}
-		>
-			<DarkModeToggle/>
+		<div className="container-fluid graph overflow-hidden" id="wallpaper"
+			 style={{ backgroundImage: `url(${backgroundImage})` }}>
+			<DarkModeToggle isDarkMode={isDarkMode}
+							onToggleChecked={() => updateState({ ...state })}/>
 			<div className="row">
-				<Folders folders={folders} onFolderClick={onFolderClicked}/>
+				<Folders
+					activeFolderName={activeFolderName}
+					onFolderClick={onFolderClicked}/>
 				{
 					isOpened && (
-						<Draggable>
-							<div className="col-xl-12 col-md-12 px-0 py-0 position-absolute">
-								<Window
-									title={activeFolderName}
-									onFolderCloseClicked={onFolderCloseClicked}
-									onWindowMinimizedClicked={onWindowMinimizedClicked}
-								/>
-							</div>
-						</Draggable>
+						<Window
+							isDarkMode={isDarkMode}
+							title={activeFolderName}
+							onFolderCloseClicked={onFolderCloseClicked}
+							onWindowMinimizedClicked={onWindowMinimizedClicked}
+						/>
 					)
 				}
-				<DockHandle minimized={minimized} activeFolderName={activeFolderName}/>
+				<DockHandle minimized={minimized} openClosedWindow={() => updateState({ ...state, isOpened: true })}/>
 			</div>
 		</div>
 	);

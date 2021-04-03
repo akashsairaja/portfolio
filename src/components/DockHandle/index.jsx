@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { openFromList } from '../../utils';
-
-const DockHandle = ({ minimized, activeFolderName }) => (
+const DockHandle = ({ minimized, openClosedWindow }) => (
 	<div className="col-md-12 fixed-bottom w-100 ml-auto" id="dockHandle">
 		<div className="dock__handle">
 			<ul className="list-group list-group-horizontal dock__handle__icons">
@@ -26,7 +24,7 @@ const DockHandle = ({ minimized, activeFolderName }) => (
 					minimized && (
 						<li
 							className="list-group-item bg-transparent border-0 dock__handle__icon"
-							onClick={() => openFromList(activeFolderName)}
+							onClick={() => openClosedWindow()}
 						>
 							<i className="fa fa-folder-open fa-2x"/>
 						</li>
@@ -48,18 +46,6 @@ const DockHandle = ({ minimized, activeFolderName }) => (
 						<i className="fa fa-twitter-square fa-2x"/>
 					</a>
 				</li>
-
-				{
-					/*<li className="list-group-item bg-transparent border-0 dock__handle__icon">
-						<a
-							rel="noopener noreferrer"
-							target="_blank"
-							href="https://www.instagram.com/akashsairaja/"
-						>
-							<i className="fa fa-instagram fa-2x" />
-						</a>
-					</li>*/
-				}
 			</ul>
 		</div>
 	</div>
@@ -67,7 +53,7 @@ const DockHandle = ({ minimized, activeFolderName }) => (
 
 DockHandle.propTypes = {
 	minimized: PropTypes.bool.isRequired,
-	activeFolderName: PropTypes.string.isRequired,
+	openClosedWindow: PropTypes.func.isRequired,
 };
 
-export default DockHandle;
+export default React.memo(DockHandle);

@@ -1,13 +1,11 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-
 import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
 
-
 import Loader from './components/Loader';
-import './scss/style.scss';
+import App from './screens';
 
-const App = React.lazy(() => import ('./screens'));
+import './scss/style.scss';
 
 const RootApp = () => (
 	<Suspense fallback={<Loader/>}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Draggable from 'react-draggable';
 
 import Experience from '../Experiance';
 import Academics from '../Academics';
@@ -8,32 +9,15 @@ import Skills from '../Skills';
 import Profile from '../Profile';
 import Contribution from '../Contribution';
 
-import { closeHandler, windowHandlers, openFolder, windowDarkModeCheck } from '../../utils';
 
 import './style.scss';
 
-export default class Window extends React.PureComponent {
-	buttonTitle = React.createRef();
+const Window = ({ title, onWindowMinimizedClicked, onFolderCloseClicked, isDarkMode }) => {
 
-	static propTypes = {
-		title: PropTypes.string.isRequired,
-		onWindowMinimizedClicked: PropTypes.func.isRequired,
-		onFolderCloseClicked: PropTypes.func.isRequired,
-	};
+	const [windowSize, updateWindowSize] = React.useState(false);
 
-	componentDidMount() {
-		this.buttonTitle.current.innerHTML = `${this.props.title}`;
-		windowDarkModeCheck();
-	}
-
-	componentDidUpdate() {
-		this.buttonTitle.current.innerHTML = `${this.props.title}`;
-		windowDarkModeCheck();
-	}
-
-	// eslint-disable-next-line react/sort-comp
-	renderComponent = () => {
-		switch (this.props.title) {
+	const renderComponent = () => {
+		switch (title) {
 			case 'Experience':
 				return <Experience/>;
 			case 'Academics':
@@ -43,49 +27,49 @@ export default class Window extends React.PureComponent {
 			case 'Skills':
 				return <Skills/>;
 			case 'MyProfile':
-				return <Profile/>;
+				return <Profile isDarkMode={isDarkMode}/>;
 			case 'Contribution':
 				return <Contribution/>;
 			default:
-				return '';
+				return null;
 		}
 	};
 
-	render() {
-		const { title, onWindowMinimizedClicked, onFolderCloseClicked } = this.props;
-		return (
-			<div className="window-frame d-block" id={title} onDoubleClick={(e) => windowHandlers(e)}>
-				<button
-					type="button"
-					className="os-button button-red px-0 mouse-default"
-					onClick={() => {
-						closeHandler();
-						openFolder(null);
-						onFolderCloseClicked();
-					}}
-				/>
-				<button
-					type="button"
-					className="os-button button-yellow px-0 mouse-default "
-					onClick={() => windowHandlers()}
-				/>
-				<button
-					type="button"
-					className="os-button button-green px-0 mouse-default"
-					onClick={() => {
-						onWindowMinimizedClicked();
-						closeHandler();
-					}}
-				/>
-				<button
-					type="button"
-					ref={this.buttonTitle}
-					className="window-title mouse-default"
-				/>
-				<div className="window-content">
-					<div className="col-md-12">{this.renderComponent()}</div>
+	const windowClass = windowSize ? 'min-vw-vh-90' : '';
+
+	return (
+		<Draggable>
+			<div className=" px-0 py-0 position-absolute window-body">
+				<div className={`window-frame d-block ${windowClass} ${isDarkMode ? 'dark-mode' : ''}`}
+					 onDoubleClick={() => updateWindowSize(!windowSize)}>
+					<button
+						type="button"
+						className="os-button button-red px-0 mouse-default"
+						onClick={() => onFolderCloseClicked()}
+					/>
+					<button type="button" className="os-button button-yellow px-0 mouse-default "
+							onClick={() => updateWindowSize(!windowSize)}/>
+					<button
+						type="button"
+						className="os-button button-green px-0 mouse-default"
+						onClick={() => onWindowMinimizedClicked()}
+					/>
+					<button type="button" className="window-title mouse-default">
+						{title}
+					</button>
+					<div className="window-content">
+						<div className="col-md-12">{renderComponent()}</div>
+					</div>
 				</div>
 			</div>
-		);
-	}
-}
+		</Draggable>
+	);
+};
+
+Window.propTypes = {
+	title: PropTypes.string.isRequired,
+	onWindowMinimizedClicked: PropTypes.func.isRequired,
+	onFolderCloseClicked: PropTypes.func.isRequired,
+};
+
+export default Window;

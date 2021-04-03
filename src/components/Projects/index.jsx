@@ -129,4 +129,4 @@ const Projects = () => (
 	</div>
 );
 
-export default Projects;
+export default React.memo(Projects);
