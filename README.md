@@ -37,7 +37,7 @@ npm start
 
 Open `http://localhost:3000/` in browser.
 
-![alt text](images/app.png)
+![alt text](images/app.gif)
 
 ##Documentation
 - [React](https://facebook.github.io/react/)
