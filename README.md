@@ -17,7 +17,7 @@ git@github.com:akashsairaja/portfolio.git
 ## Client Settings
 
 ```bash
-cd client
+cd portfolio
 cmd npm install
 ```
 
