@@ -33,6 +33,10 @@ const Profile = ({ isDarkMode }) => (
 									<i className="fa fa-arrow-circle-right"/>{' '}
 									<strong>Location:</strong> {config.profile.location}
 								</li>
+							</ul>
+						</div>
+						<div className="col-lg-6">
+							<ul className="text-left">
 								<li>
 									<i className="fa fa-arrow-circle-right"/>{' '}
 									<strong>Degree:</strong> {config.profile.degree}
@@ -41,11 +45,6 @@ const Profile = ({ isDarkMode }) => (
 									<i className="fa fa-arrow-circle-right"/>{' '}
 									<strong>Email:</strong> {config.profile.email}
 								</li>
-							</ul>
-						</div>
-						<div className="col-lg-6">
-							<ul className="text-left">
-
 							</ul>
 						</div>
 					</div>

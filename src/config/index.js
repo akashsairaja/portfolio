@@ -363,7 +363,7 @@ const config = {
 			icon: '',
 		},
 	],
-	resume: 'https://www.drive.com/akashresume.pdf',
+	resume: '', //https://www.drive.com/akashresume.pdf
 };
 
 export default config;
