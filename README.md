@@ -21,8 +21,7 @@ cd portfolio
 cmd npm install
 ```
 
-#Configuration's
-Custom Configurations
+#Custom Configurations
 ```spacebars
     src/config/index.js
 ```
