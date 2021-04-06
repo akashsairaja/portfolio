@@ -29,7 +29,7 @@ const Window = ({ title, onWindowMinimizedClicked, onFolderCloseClicked, isDarkM
 			case 'MyProfile':
 				return <Profile isDarkMode={isDarkMode}/>;
 			case 'Contribution':
-				return <Contribution/>;
+				return <Contribution isDarkMode={isDarkMode}/>;
 			default:
 				return null;
 		}
@@ -70,6 +70,7 @@ Window.propTypes = {
 	title: PropTypes.string.isRequired,
 	onWindowMinimizedClicked: PropTypes.func.isRequired,
 	onFolderCloseClicked: PropTypes.func.isRequired,
+	isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default Window;

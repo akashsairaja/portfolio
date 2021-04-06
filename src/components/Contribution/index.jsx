@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import config from '../../config';
 
 const images = config.images;
 
-const OpenSourceContribution = () => (
+const OpenSourceContribution = ({ isDarkMode }) => (
 	<div className="container">
 		<h1 className="font-weight-light text-center text-lg-left mt-4 mb-0">Open Source Contributions</h1>
 		<hr className="mt-2 mb-5"/>
@@ -23,9 +24,9 @@ const OpenSourceContribution = () => (
 						</span>
 						</div>
 						<a rel="noopener noreferrer" href="!#" className="d-block mb-4 h-100">
-							<img className="img-fluid img-thumbnail" src={
-								imageKey.includes('http') ? imageKey : images[imageKey]
-							} alt={imageKey}/>
+							<img className="img-fluid img-thumbnail"
+								 style={{ filter: isDarkMode ? 'invert(100%) hue-rotate(180deg)' : 'none' }}
+								 src={imageKey.includes('http') ? imageKey : images[imageKey]} alt={imageKey}/>
 						</a>
 					</div>
 				))
@@ -33,5 +34,9 @@ const OpenSourceContribution = () => (
 		</div>
 	</div>
 );
+
+OpenSourceContribution.propTypes = {
+	isDarkMode: PropTypes.bool.isRequired,
+};
 
 export default React.memo(OpenSourceContribution);
