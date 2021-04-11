@@ -11,7 +11,7 @@ const OpenSourceContribution = ({ isDarkMode }) => (
 		<hr className="mt-2 mb-5"/>
 		<div className="row text-center text-lg-left">
 			{
-				config.projects.map(({ title, projectUrl, imageKey }, index) => (
+				config.contribution.map(({ title, projectUrl, imageKey }, index) => (
 					<div className="col-lg-6 col-md-6 col-6" key={index}>
 						<div className="text-dark my-2">
 							{title}

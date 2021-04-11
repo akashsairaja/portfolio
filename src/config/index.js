@@ -20,6 +20,10 @@ const config = {
 			icon: 'fa fa-folder fa-2x',
 			name: 'Contribution',
 		},
+		{
+			icon: 'fa fa-folder fa-2x',
+			name: 'Projects',
+		},
 	],
 	images: {
 		wallpaper: require('../images/wallpaper.jpg'),
@@ -242,7 +246,7 @@ const config = {
 			location: 'Chennai, Tamil Nadu',
 		},
 	],
-	projects: [
+	contribution: [
 		{
 			title: 'Music Player App - HTML5 - React - Nodejs',
 			projectUrl: 'https://github.com/akashsairaja/Audio-Player-HTML5-React-NodeJS',
@@ -257,6 +261,60 @@ const config = {
 			title: 'Set as your home page',
 			projectUrl: 'https://github.com/akashsairaja/set-your-homepage',
 			imageKey: 'homePage',
+		},
+	],
+	projects: [
+		{
+			title: 'Lima - Cloud Enteripise Data HUB',
+			client: 'Intel, Logitech, Nokia',
+			icon: 'fa fa-cloud',
+			description: 'Create and manage remote data source connections such as File\n' +
+				'\t\t\t\t\t\t\tSystems (HDFS, S3, etc.), Database Systems (MSSQL, ORALCE, MySQL,\n' +
+				'\t\t\t\t\t\t\tMongoDB, etc.) and to load the data into different systems using Node ,\n' +
+				'\t\t\t\t\t\t\tGo API. Clients can create transformations such as to perform query\n' +
+				'\t\t\t\t\t\t\toperations like Join, Union and Upsert etc. from UI. Node will help\n' +
+				'\t\t\t\t\t\t\tto generate data and pass to backend to perform the Big Data\n' +
+				'\t\t\t\t\t\t\tOperations using Spark and NodeJS. Workflows are set of\n' +
+				'\t\t\t\t\t\t\ttransformations and data load that can be scheduled. Scheduling is\n' +
+				'\t\t\t\t\t\t\tdone through Node scheduler Micro service. In Node Part we have made\n' +
+				'\t\t\t\t\t\t\tthe Architecture as to Micro services and Standalone Apps. Each\n' +
+				'\t\t\t\t\t\t\tMicro service will serve REST API’s for each modules. Load Balancer\n' +
+				'\t\t\t\t\t\t\tservice is used to balance and reroute all REST API’s hits from UI.',
+			company: 'Aline - Consulting Oy',
+		},
+		{
+			title: 'DEMAND MANAGEMENT AND PLANNING',
+			client: 'Nokia',
+			icon: 'fa fa-chain',
+			description: 'The project was done as to handle Big Data from NodeJS. Users will\n' +
+				'\t\t\t\t\t\t\tupload their large scale files from UI, Node will process and parse\n' +
+				'\t\t\t\t\t\t\tthe files and made as JSON object based on metadata, then backend\n' +
+				'\t\t\t\t\t\t\tdid queries and process such as data validation, referential\n' +
+				'\t\t\t\t\t\t\tverification & auto create functionality. Then finally load the\n' +
+				'\t\t\t\t\t\t\tvalid records into master tables and invalid into log tables which\n' +
+				'\t\t\t\t\t\t\tis flexible to check business users.',
+			company: 'Aline - Consulting Oy',
+		},
+		{
+			title: 'ONLINE BOOKING HOTELS, CARS, TAXI AND ACTIVITES',
+			client: 'XeniApp',
+			icon: 'fa fa-tripadvisor',
+			description: 'XeniApp is a travel booking portal that allows you to browse and\n' +
+				'\t\t\t\t\t\t\tbuild your trip itinerary on a single page. You can add flights,\n' +
+				'\t\t\t\t\t\t\thotels, car rentals, transfer and Activities by simply dragging and\n' +
+				'\t\t\t\t\t\t\tdropping them into your itinerary and book multiple items in one\n' +
+				'\t\t\t\t\t\t\tclick.',
+			company: 'XeniApp',
+		},
+		{
+			title: 'Web Scrapping Tool',
+			client: '',
+			icon: 'fa fa-terminal',
+			description: 'The project was done as to Scrap the product information’s like\n' +
+				'\t\t\t\t\t\t\tcategory, specifications, technical description, images, review’s\n' +
+				'\t\t\t\t\t\t\tfrom Amazon. UI driven triggering the python scripts, from there\n' +
+				'\t\t\t\t\t\t\tscript produce data , updating it in MY-SQL and exporting file',
+			company: 'EVERDEAR INFRACON PRIVATE LIMITED',
 		},
 	],
 	experience: [
