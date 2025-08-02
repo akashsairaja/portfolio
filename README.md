@@ -1,45 +1,64 @@
-# portfolio
+# Portfolio
 
-    Portfolio : Simple Developer portfolio
+A simple developer portfolio built with React and Vite.
 
-## System Configuration
+## System Requirements
 
-Please be sure you are using `nodeJS  required`.
+- Node.js 18.x or later
+- npm 9.x or later
 
-## Get Started
+## Getting Started
 
-Install the repository locally:
-
-```bash
-git@github.com:akashsairaja/portfolio.git
-```
-
-## Client Settings
+Clone the repository locally:
 
 ```bash
+git clone git@github.com:akashsairaja/portfolio.git
 cd portfolio
-cmd npm install
 ```
 
-#Custom Configurations
-```spacebars
-    src/config/index.js
-```
+## Installation
 
-
-### Run Client
+Install dependencies:
 
 ```bash
-cd clinet
-npm start
+npm install
 ```
 
-Open `http://localhost:3000/` in browser.
+## Custom Configuration
 
-![alt text](images/app.gif)
+You can customize your portfolio by editing:
 
-##Documentation
-- [React](https://facebook.github.io/react/)
-- [Hooks](https://reactjs.org/docs/hooks-intro.html)
-- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-- [SASS](https://sass-lang.com/guide)
+```
+src/config/index.js
+```
+
+## Running the Application
+
+### Development Mode
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:3000/` in your browser.
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Migration from React Scripts to Vite
+
+This project has been migrated from Create React App (react-scripts) to Vite for better performance and developer experience. See [MIGRATION.md](MIGRATION.md) for details.
+
+![Portfolio Demo](images/app.gif)
+
+## Documentation
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Sass](https://sass-lang.com/guide/)

@@ -1,21 +1,27 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+// Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Loader from './components/Loader';
 import App from './screens';
 
+// Import custom styles
 import './scss/style.scss';
 
 const RootApp = () => (
 	<Suspense fallback={<Loader/>}>
 		<BrowserRouter>
-			<Switch>
-				<Route path="/" exact component={App}/>
-				<Redirect to="/"/>
-			</Switch>
+			<Routes>
+				<Route path="/" element={<App />} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Routes>
 		</BrowserRouter>
 	</Suspense>
 );
 
-ReactDOM.render(<RootApp/>, document.getElementById('root-react'));
+// Create root using React 18 createRoot API
+const root = ReactDOM.createRoot(document.getElementById('root-react'));
+root.render(<RootApp />);

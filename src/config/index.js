@@ -1,3 +1,12 @@
+// Import images
+import wallpaper from '../images/wallpaper.jpg';
+import profilePic from '../images/profile.jpg';
+import profileBE from '../images/beprofile.jpg';
+import wallpaperBE from '../images/bewallpaper.jpg';
+import musicPlayer from '../images/app.gif';
+import todoApp from '../images/todo.gif';
+import homePage from '../images/homepage.gif';
+
 const config = {
 	folders: [
 		{
@@ -26,13 +35,13 @@ const config = {
 		},
 	],
 	images: {
-		wallpaper: require('../images/wallpaper.jpg'),
-		profilePic: require('../images/profile.jpg'),
-		profileBE: require('../images/beprofile.jpg'),
-		wallpaperBE: require('../images/bewallpaper.jpg'),
-		musicPlayer: require('../images/app.gif'),
-		todoApp: require('../images/todo.gif'),
-		homePage: require('../images/homepage.gif'),
+		wallpaper,
+		profilePic,
+		profileBE,
+		wallpaperBE,
+		musicPlayer,
+		todoApp,
+		homePage,
 	},
 	profile: {
 		aboutme: 'HEY! I AM Akash Sai, Software Engineer',
