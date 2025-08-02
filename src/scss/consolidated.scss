@@ -1,9 +1,6 @@
-// Consolidated SCSS file for the entire portfolio project
-
-// Import custom CSS
+@use "sass:color";
 @import "./css/icons.min.css";
 
-// Font definition
 @font-face {
   font-family: 'Josefin Sans';
   font-style: normal;
@@ -14,7 +11,7 @@
 
 // Variables
 $primary-color: #FF6B6B;
-$primary-color-hover: scale-color($primary-color, $lightness: 32%);
+$primary-color-hover: color.scale($primary-color, $lightness: 32%);
 
 // Global Styles
 *,
