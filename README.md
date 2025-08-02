@@ -49,10 +49,6 @@ npm run build
 npm run preview
 ```
 
-## Migration from React Scripts to Vite
-
-This project has been migrated from Create React App (react-scripts) to Vite for better performance and developer experience. See [MIGRATION.md](MIGRATION.md) for details.
-
 ![Portfolio Demo](images/app.gif)
 
 ## Documentation
