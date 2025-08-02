@@ -2,13 +2,11 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-// Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Loader from './components/Loader';
 import App from './screens';
 
-// Import custom styles
 import './scss/consolidated.scss';
 
 const RootApp = () => (
