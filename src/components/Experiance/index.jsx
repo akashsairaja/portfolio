@@ -2,8 +2,6 @@ import React from 'react';
 
 import config from '../../config';
 
-import './style.scss';
-
 const Experience = () => (
 	<div className="container-fluid">
 		<div className="row justify-content-center">

@@ -9,9 +9,6 @@ import Skills from '../Skills';
 import Profile from '../Profile';
 import Contribution from '../Contribution';
 
-
-import './style.scss';
-
 const Window = ({ title, onWindowMinimizedClicked, onFolderCloseClicked, isDarkMode }) => {
 
 	const [windowSize, updateWindowSize] = React.useState(false);

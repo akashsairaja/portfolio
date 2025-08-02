@@ -9,7 +9,7 @@ import Loader from './components/Loader';
 import App from './screens';
 
 // Import custom styles
-import './scss/style.scss';
+import './scss/consolidated.scss';
 
 const RootApp = () => (
 	<Suspense fallback={<Loader/>}>
